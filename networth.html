@@ -1,0 +1,663 @@
+<div class="py-3">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light bg--danger p-0"> 
+            <div class="navbar-header">
+                <button class="navbar-toggler bg--secondary text-white mx-2 my-2 py-2" data-toggle="collapse" data-target="#financeNav"><i class="fa fa-arrow-down"></i> Choose Calculator</button>
+            </div>
+            <div class="collapse navbar-collapse" id="financeNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="networth.html" class="nav-link" style="border-right: 1px solid #fff;">Net Worth Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="income_expense_tracker.html" class="nav-link" style="border-right: 1px solid #fff;">Income/Expense Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="budget_tracker.html" class="nav-link">Budget Tracker</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+                   
+    <div class="container bg-white pb-1">
+        <div class="row">
+            <div class="col">
+                            
+                <!-- NetWorth Calculator-->
+                <div class=" mt-3">
+                    <h2>Net Worth Calculator</h2>
+                    <p>Knowing your net worth will help you plan your future and assess your financial health. This calculator will help you see the difference between your assets (what you OWN) and your liabilities ( what you OWE). It will give you insights and recommendations how to have a healthy net worth.</p><hr>
+                </div>
+
+                <!--Net Worth Table-->
+                <div class="row">
+                <!--Assets/Disabilities-->
+                <div class="col-lg-6 col-md-12">
+                    <!--Asset Table-->
+                    <p class="mb-0">NOTE: Click input asset button to open asset form. Fill in all assets that apply and hit submit.</p>
+                    <div class="card mb-3">
+                        <div class="card-header bg--danger p-1">
+                            <h4 class="text-white pt-1"><i class="fa fa-money"></i> Assets
+                                <button type="button" class="btn btn-secondary btn-sm float-right" data-toggle="modal" data-target="#aModal"><i class="fa fa-pencil-square-o pr-2"></i>Input Asset</button>
+                            </h4>
+                        </div>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Real Properties</td>
+                                    <td><i class="fa fa-question-circle text-info" 
+                                        data-toggle="modal" data-target="#assetModal"
+                                    ></i></td>
+                                    <td id="rass">--</td>
+                                    <td class="text-right pr-4" id="real">---</td>
+
+                                </tr>                                                       
+                                <tr>
+                                    <td scope="row">Personal Properties</td>
+                                    <td><i class="fa fa-question-circle text-info"
+                                    data-toggle="modal" data-target="#assetModal"   
+                                    ></i></td>
+                                    <td id="pass">--</td>
+                                    <td class="text-right pr-4" id="personal">---</td>                            
+
+                                <tr>
+                                    <td scope="row">Investment/Savings</td>
+                                    <td><i class="fa fa-question-circle text-info"
+                                        data-toggle="modal" data-target="#assetModal"  
+                                    ></i></td>
+                                    <td id="inv">--</td>
+                                    <td class="text-right pr-4" id="invest">---</td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="row">Liquid Assets</td>
+                                    <td><i class="fa fa-question-circle text-info"
+                                        data-toggle="modal" data-target="#assetModal" 
+                                    ></i></td>
+                                    <td id="liq">--</td>
+                                    <td class="text-right pr-4" id="liquid">---</td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="row">Other Assets</td>
+                                    <td><i class="fa fa-question-circle text-info"
+                                        data-toggle="modal" data-target="#assetModal" 
+                                    ></i></td>
+                                    <td id="oass">--</td>
+                                    <td class="text-right pr-4" id="other">---</td>
+
+                                </tr>
+                                <tr class="bg--secondary text-white">
+                                    <td scope="row"><strong>Total Asset</strong></td>
+                                    <td></td>
+                                    <td id="totalDec">--<strong></strong></td>
+                                    <td class="text-right pr-4" id="totalAss"><strong>---</strong></td>
+                                    <td id="totalAsse" class="d-none"></td>  
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>                                   
+                </div>
+
+                <!--Liabilities-->
+                <div class="col-lg-6 col-md-12">
+                <p class="mb-0">NOTE: Click input liabilities button to open the liability form. Fill in all liabilities that apply and hit submit. </p>
+                    <div class="card">
+                        <div class="card-header bg--danger p-1">
+                            <h4 class="text-white pt-1"><i class="fa fa-credit-card"></i> Liabilities
+                            <button type="button" class="btn btn-secondary btn-sm float-right" data-toggle="modal" data-target="#lModal"><i class="fa fa-pencil-square-o pr-2"></i>Input Liabilities</button>
+                            </h4>
+                        </div>
+                        <table class="table table-sm">
+                            <thead class="thead-light">
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row"                                
+                                        >Real Property Loans
+                                        </td>
+                                    <td><i class="fa fa-question-circle text-warning"
+                                        data-toggle="modal" data-target="#liabilitiesModal" 
+                                    ></i></td>
+                                    <td id=rper>--</td>
+                                    <td class="text-right pr-4" id="realLoan">---</td>
+                                </tr>                                                   
+                                <tr>
+                                    <td scope="row">Personal Property<br>Loans</td>
+                                    <td><i class="fa fa-question-circle text-warning"
+                                        data-toggle="modal" data-target="#liabilitiesModal" 
+                                        ></i></td>
+                                    <td id="pper">--</td>
+                                    <td class="text-right pr-4" id="personalLoan">---</td>                    
+                                </tr>
+                                <tr>
+                                    <td scope="row">Credit Card Balance</td>
+                                    <td><i class="fa fa-question-circle text-warning"
+                                        data-toggle="modal" data-target="#liabilitiesModal"></i></td>
+                                    <td id="cper">--</td>
+                                    <td class="text-right pr-4" id="credit">---</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Other Liabilities</td>
+                                    <td><i class="fa fa-question-circle text-warning"
+                                        data-toggle="modal" data-target="#liabilitiesModal"></i></td>
+                                    <td id="oper">--</td>
+                                    <td class="text-right pr-4" id="otherLia">---</td>
+                                </tr>
+                                <tr class="bg--secondary text-white">
+                                    <td scope="row"><strong>Total Liabilities</strong></td>
+                                    <td></td>
+                                    <td id="toLiaDec">--<strong></strong></td>
+                                    <td class="text-right pr-4" id="totalLiabilities"><strong>---</strong></td>
+                                    <td id="totalLia" class="d-none"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div><!--End of Net Worth Row-->
+            
+                <!--Calculate NET WORTH-->
+                <div class="row">         
+                    <div class="col-lg-6 col-md-12 text-center">
+                    <button type="button" class="btn btn--danger text-white my-3" id="cal_net" onclick="calNet()">Calculate Net Worth.</button>
+                        <div class="card lead">
+                            <div class="card-header bg--secondary">
+                                <h4 class="text-white">Total Net Worth</h4>
+                            </div>
+                            <table class="table table-sm text-left">
+                            <thead>
+                                <tr>
+                                <td scope="row"></td>
+                                    <td>Percentage</td>
+                                    <td class="text-right pr-3">Value</td>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <tr class="text-success">
+                                        <td scope="row">Total Assets</td>
+                                        <td id="taPercent">----</td>
+                                        <td class="text-right pr-3" id="nwAsset">-----</td>
+                                    </tr>                                                       
+                                    <tr class="text-danger">
+                                        <td scope="row"><strong>(-)</strong> Total Liabilities</td>
+                                        <td id="tlPercent">----</td>
+                                        <td class="text-right pr-3" id="nwLia">-----</td>                            
+                                    </tr>
+                                    <tr class="net_worth">
+                                        <td scope="row"><strong>Net Worth</strong></td>
+                                        <td></td>
+                                        <td class="text-right pr-3" id="totalNw"><strong>-----</strong></td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+
+                    <!-- Google Charts -->
+                    <div class="col-lg-6 col-md-12 text-center">
+                        <button type="button" class="btn btn--danger text-white my-3" onclick="donut()">Show Chart.</button>
+                        <!-- Donut Chart-->                        
+                            <div class="card">
+                            <div id="donutchart" style="width: 460px; height: 300px;"></div>                          
+                        </div>
+                    </div> 
+                </div>
+            </div>  
+        </div><!--End of NetWorth Calculator-->
+        <div class="card-body bg-light my-3">
+            <h4>Important Note</h4>
+            <p>This financial tools are designed to help you assess your financial standing. This website does not in any way store data that users have entered. All information you entered will be cleared automatically upon closing the website.
+        </div>
+    </div>
+</div><!--End of Main Body-->
+
+<!--  Assets Modal-->
+<div class="modal" id="aModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg--default py-3">
+            <h3 class="modal-title text-white pl-2">Assets</h3>
+            <button class="close text-light" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="ml-4 mt-3">
+            <p class="mb-0">INSTRUCTION: Only fill the value of the things that you own (NOTE: Don't use comma). If you own things that is not in the list, just put in in the 'others'. Click the Calculate button to sum up the total value of your asset. </p>
+          </div>
+            <div class="modal-body">
+              <!--Balance Sheet-->
+                <div class="col-lg-12">
+                    <div class="card-header bg--secondary text-white pt-2 pb-1">
+                    <h5>What you OWN</h5></div>
+                    <div class="card-body border border-secondary">                         
+                        <form action="">
+                            <h4>Real Property</h4>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                        <td>House</td>
+                                        <td><input type="text" value="0" class="form-control text-right py-1 float-right" style="width:70%;" id="real1" onkeyup="computeReal()"></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Condo Unit</td>
+                                        <td><input type="text" value="0" id="real2" class="form-control py-1 text-right float-right" style="width:70%;" onkeyup="computeReal()"></td>
+                                        </tr>
+                                        <tr>              
+                                        <td>Farm Lot</td>
+                                        <td><input type="text"  value="0" id="real3" class="form-control py-1 text-right float-right" style="width:70%;" onkeyup="computeReal()"></td>
+                                        </tr>
+                                        <tr>             
+                                        <td>Others</td>
+                                        <td><input type="text" value="0" id="real4" class="form-control py-1 text-right float-right" style="width:70%;" onkeyup="computeReal()"></td>
+                                        </tr>
+                                        <tr class="bg--default">             
+                                        <td>Total</td>
+                                        <td><input type="number" value="0" id="realTotal" class="form-control py-1 text-right float-right" style="width:70%;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            
+                            <h4>Personal Property</h4>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                        <td>Personal Auto</td>
+                                        <td><input type="text" id="per1" class="form-control py-1 text-right float-right" style="width:70%;" value="0"  onkeyup="computePer()"></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Recreational Vehicle</td>
+                                        <td><input type="text" id="per2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="computePer()"></td>
+                                        </tr>
+                                        <tr>              
+                                        <td>Furniture/Appliances</td>
+                                        <td><input type="text" id="per3" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="computePer()"></td>
+                                        </tr>
+                                        <tr>              
+                                        <td>Jewelry/Artworks</td>
+                                        <td><input type="text" id="per4" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="computePer()"></td>
+                                        </tr>
+                                        <tr>             
+                                        <td>Others</td>
+                                        <td> <input type="text" id="per5" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="computePer()"></td>
+                                        </tr>
+                                        <tr class="bg--default">             
+                                        <td>Total</td>
+                                        <td><input type="number" value="0" id="perTotal" class="form-control py-1 text-right float-right" style="width:70%;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            <h4>Investment</h4>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                        <td>Life Insurance Account Value</td>
+                                        <td><input type="text" id="in1" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="inV()"></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Mutual Fund / UITF</td>
+                                        <td><input type="text" id="in2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="inV()"></td>
+                                        </tr>
+                                        <tr>              
+                                        <td>Stocks/Bond/COD</td>
+                                        <td><input type="text" id="in3" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="inV()"></td>
+                                        </tr>
+                                        <tr>             
+                                        <td>Real Estate</td>
+                                        <td><input type="text" id="in4" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="inV()"></td>
+                                        </tr>
+                                        <td>Others</td>
+                                        <td><input type="text" id="in5" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="inV()"></td>
+                                        </tr>
+                                        <tr class="bg--default">             
+                                        <td>Total</td>
+                                        <td><input type="number" value="0" id="invTotal" class="form-control py-1 text-right float-right" style="width:70%;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            <h4>Liquid Assets</h4>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                        <td>Cash on Hand</td>
+                                        <td><input type="text" id="liq1" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="liqAs()"></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Savings Accounts</td>
+                                        <td><input type="text" id="liq2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="liqAs()"></td>
+                                        </tr>
+                                        <tr>    
+                                        <td>Checking Accounts</td>
+                                        <td><input type="text" id="liq3" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="liqAs()"></td>
+                                        </tr>          
+                                        <td>Money Market Funds</td>
+                                        <td> <input type="text" id="liq4" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="liqAs()"></td>
+                                        </tr>
+                                        <tr>             
+                                        <td>Others</td>
+                                        <td><input type="text" id="liq5" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="liqAs()"></td>
+                                        </tr>
+                                        <tr class="bg--default">             
+                                        <td>Total</td>
+                                        <td><input type="number" value="0" id="liqTotal" class="form-control py-1 text-right float-right" style="width:70%;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h4>Other Assets</h4>
+                                <table class="table">
+                                    <tbody>               
+                                        <tr>
+                                        <td>Total Pag-ibig Contributions</td>
+                                        <td><input type="text" id="oa1" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherAsset()"></td>
+                                        </tr>
+                                        <tr>    
+                                        <td>Loans to Friends/Family</td>
+                                        <td><input type="text" id="oa2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherAsset()"></td>
+                                        </tr>                    
+                                        <td>Others</td>
+                                        <td><input type="text" id="oa3" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherAsset()"></td>
+                                        </tr>
+                                        <tr class="bg--default">             
+                                        <td>Total</td>
+                                        <td><input type="number" value="0" id="oaTotal" class="form-control py-1 text-right float-right" style="width:70%;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                        
+                                <div class="col-md-6 py-2 mx-auto">
+                                    <button type="button" class="btn btn--danger btn-block text-center my-2" data-dismiss="modal" onclick="comAss()">Submit</button>
+                                    </div>
+                        </form>
+                    </div>    
+                </div><!--End of Assets-->
+            </div>          
+        </div>
+    </div>
+</div>
+
+
+<!--Liabilities Modal-->
+<div class="modal" id="lModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg--secondary px-1 py-3">
+            <h3 class="modal-title text-white pl-2">Liabilities</h3>
+            <button class="close text-light mr-3" data-dismiss="modal">&times;</button>
+          </div>
+            <div class="modal-body">
+            <div class="col-lg-12">
+                <div class="card-body bg--secondary pt-2 pb-1 text-white "><h5>What You OWE</h5></div>
+                <div class="card-body border border-secondary">
+                    <form action="">
+                        <h4>Real Property Loan</h4>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                    <td>Home Loan Balance</td>
+                                    <td><input type="text" id="rd1" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="realDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Others</td>
+                                    <td><input type="text" id="rd2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="realDis()"></td>
+                                    </tr>
+                                    <tr class="bg--default">             
+                                    <td>Total</td>
+                                    <td><input type="number" id="rdTotal" class="form-control py-1 text-right float-right" value="0" style="width:70%;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        
+                        <h4>Personal Property Loans</h4>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                    <td>Car Loan Balance</td>
+                                    <td><input type="text" id="pd1" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="perDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Motorcyle Loan Balance</td>
+                                    <td><input type="text" id="pd2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="perDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Other Personal Loan Balance</td>
+                                    <td><input type="text" id="pd3" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="perDis()"></td>
+                                    </tr>
+                                    <tr class="bg--default">             
+                                    <td>Total</td>
+                                    <td><input type="number" id="pdTotal" class="form-control py-1 text-right float-right" value="0" style="width:70%;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        <h4>Credit Card Loans</h4>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                    <td>Credit Car 1</td>
+                                    <td><input type="text" id="cd1" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="creditCard()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Credit Car 2</td>
+                                    <td><input type="text" id="cd2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="creditCard()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Credit Car 3</td>
+                                    <td><input type="text" id="cd3" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="creditCard()"></td>
+                                    </tr>
+                                    <td>Other Credit Car Loans</td>
+                                    <td><input type="text" id="cd4" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="creditCard()"></td>
+                                    </tr>
+                                    <tr class="bg--default">             
+                                    <td>Total</td>
+                                    <td><input type="number" id="cdTotal" class="form-control py-1 text-right float-right" value="0" style="width:70%;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        <h4>Other Liabilities</h4>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                    <td>Business Loan</td>
+                                    <td><input type="text" id="ol1" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>College Loan</td>
+                                    <td><input type="text" id="ol2" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Salary Loan</td>
+                                    <td><input type="text" id="ol3" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Personal Loan from Someone</td>
+                                    <td><input type="text" id="ol4" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td>OFW Loan</td>
+                                    <td><input type="text" id="ol5" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>SSS/GSIS Loan</td>
+                                    <td><input type="text" id="ol6" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Pag-ibig Loan</td>
+                                    <td><input type="text" id="ol7" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Others</td>
+                                    <td><input type="text" id="ol8" class="form-control py-1 text-right float-right" value="0" style="width:70%;" onkeyup="otherDis()"></td>
+                                    </tr>
+                                    <tr class="bg--default">             
+                                    <td>Total</td>
+                                    <td><input type="number" id="olTotal" class="form-control py-1 text-right float-right" value="0" style="width:70%;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>                                           
+                            <div class="col-md-6 py-2 mx-auto">
+                                <button type="button" class="btn btn--danger btn-block text-center my-2" data-dismiss="modal" onclick="comLia()">Submit</button>
+                            </div>
+                    </form>
+                    </div>        
+                </div> 
+            </div>          
+        </div>
+    </div>
+</div>
+
+<!--  Assets Modal Diff-->
+<div class="modal" id="assetModal">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="modal-header bg--primary py-3">
+            <h5 class="modal-title text-white pl-2">Glossary of Terms</h5>
+            <button class="close text-light" data-dismiss="modal">&times;</button>
+          </div>
+            <div class="modal-body">
+              <!--Accordion-->
+               <div id="accordion" role="tablist">
+                    <div class="card">
+                    <div class="card-header py-1">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#assetOne" data-parent="#accordion">
+                          <h6>Real Properties</h6>
+                        </div>
+                      </h5>
+                    </div>
+
+                    <div id="assetOne" class="collapse show">
+                      <div class="card-body">
+                        <p>Your real property includes home (detached or semi-detached) and condo unit or apartment that you own. Includes in the others some real real estate properties like rental property, cottage, etc. Enter the estimated current total value.</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                    <div class="card-header py-1">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#assetTwo" data-parent="#accordion">
+                          <h6>Personal Properties</h6>
+                        </div>
+                      </h5>
+                    </div>
+                    <div id="assetTwo" class="collapse">
+                      <div class="card-body">
+                        Personal Property is movable property. It is anything that can be subject to ownership except land. Examples of personal property includes your car, appliances, furniture, boats and collectibles.
+                      </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                    <div class="card-header py-1" >
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#assetThree" data-parent="#accordion">
+                          <h6>Investments/Insurance</h6>
+                        </div>
+                      </h5>
+                    </div>
+                    <div id="assetThree" class="collapse">
+                      <div class="card-body">
+                        Include the current account value of any life insurance you have. Term insurance is rarely considered an asset. Your <strong>investments</strong> may include bonds, stocks, Mutual Funds, UITF..
+                      </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                    <div class="card-header py-1">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#assetFour" data-parent="#accordion">
+                          <h6>Liquid Assets</h6>
+                        </div>
+                      </h5>
+                    </div>
+                    <div id="assetFour" class="collapse" >
+                      <div class="card-body">
+                         A liquid assets is cash on hand or any assets that can be readily converted into cash like saving account, checking account, Money Market Funds and my include cash allocated for emergency fund.
+                      </div>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!--  Liabilities Modal Diff-->
+<div class="modal" id="liabilitiesModal">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="modal-header bg--default p-3">
+            <h5 class="modal-title text-white pl-2">Glossary of Terms</h5>
+            <button class="close text-light" data-dismiss="modal">&times;</button>
+          </div>
+            <div class="modal-body">
+              <!--Accordion-->
+               <div id="accordion" role="tablist">
+                    <div class="card">
+                    <div class="card-header py-1">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#liabilityOne" data-parent="#accordion">
+                          <h6>Real Property Loans</h6>
+                        </div>
+                      </h5>
+                    </div>
+
+                    <div id="liabilityOne" class="collapse show">
+                      <div class="card-body">
+                            The current total balance of any real estate loans you made. For example, the remaining balance that you must pay for a home loan.
+                      </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                    <div class="card-header py-1">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#liabilityTwo" data-parent="#accordion">
+                          <h6>Personal Loans</h6>
+                        </div>
+                      </h5>
+                    </div>
+                    <div id="liabilityTwo" class="collapse" >
+                      <div class="card-body">
+                        Any current total balance of all loans you made to purchase personal assets like vehicles, furnitures, clothings, etc. 
+                      </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                    <div class="card-header py-1">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#liabilityThree" data-parent="#accordion">
+                          <h6>Credit Card Balance</h6>
+                        </div>
+                      </h5>
+                    </div>
+                    <div id="liabilityThree" class="collapse">
+                      <div class="card-body">
+                        The current total unpaid credit balance of all your credit card accounts.
+                      </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                    <div class="card-header py-1">
+                      <h5 class="mb-0">
+                        <div data-toggle="collapse" href="#liabilityFour" data-parent="#accordion">
+                          <h6>Other Liabilities</h6>
+                        </div>
+                      </h5>
+                    </div>
+                    <div id="liabilityFour" class="collapse">
+                      <div class="card-body">
+                        All liabilities that are not included above such as business loans, friends loans, Social Security loans and others.
+                      </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
