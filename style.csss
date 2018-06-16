@@ -177,7 +177,7 @@ Showcase
 
 #showcase {
   position: relative;
-  background: url("/images/couple.jpeg");
+  background: url("couple.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
