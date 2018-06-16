@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Finacial Tool | One Stop Site For Your Financial Tools</title>
+</head>
+
+<div class="py-3">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light bg--danger p-0"> 
+        <div class="navbar-header">
+            <button class="navbar-toggler bg--secondary text-white mx-2 my-2 py-2" data-toggle="collapse" data-target="#financeNav"><i class="fa fa-arrow-down"></i> Choose Calculator</button>
+        </div>
+        <div class="collapse navbar-collapse" id="financeNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="networth.html" class="nav-link" style="border-right: 1px solid #fff;">Net Worth Calculator</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="income_expense_tracker.html" class="nav-link" style="border-right: 1px solid #fff;">Income/Expense Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a href="budget_tracker.html" class="nav-link">Budget Tracker</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+    </div>    
+    <div class="container bg-white">
+        <div class="row">
+            <div class="px-3 mt-3">
+                <h2>Income Expense Tracker</h2>
+                <p>Tracking your personal income and expense is the best way to know exactly where you money is coming from and going to. This way you'll be able to create financial awareness. Knowing where your money is going and how you spend them will help you know what habits you need to change in order to at least balance your lifestyle to achieve financial goals you want in life.
+                <br><br>
+                This tracking software is designd to help you ease out in tracking your income and expenses. All you have to do is input all the sources of your income and expenses it will automatically calculate the total result for you.
+                </p><hr>
+                <div class="card-body bg-light">
+                    <h2 class="text-center display-4">Income</h2>
+                    <input type="text" id="income" value="0" class="form-control mx-auto text-center my-2" style="width:30%; height:40px; font-size:25px;">
+                    <p class="text-center">If you are an employee, enter the Monthly Gross Income you received from your main job plus income from side jobs or investments</p>
+                </div>
+                <h5 class="text-center mt-3 py-3 border border-dark bg-light">It is highly recommended you use the (INCOME - SAVINGS = EXPENSES) formula</h5>
+            </div>
+        </div>
+        
+        
+    <div class="row">
+        <div class="col-md-12 col-lg-6 mx-auto">
+                                                                                   
+        <!-- Savings Accordion -->
+        <h4 class="text-center text-white mx-5 my-3 py-1 pb-2 border-radius bg--secondary">Savings</h4>
+         <p class="text-muted mb-1">Click down arrow <i class="fa fa-arrow-circle-down text-info"></i> to input individual lists of savings</p>
+         <small>NOTE: Input your monthly savings.</small>
+          <div id="accordion" role="tablist">
+            <div class="card">
+              <div class="card-body bg--default py-2" id="heading1">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#invest" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Investments<span  class="float-right"><input id="totalIn" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+              <div id="invest" class="collapse">
+                <div class="card-body">
+                    <table class="table table-bordered table-primary">
+                    <tbody>
+                        <tr>
+                          <td class="py-1">Real Estate</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="re" onkeyup="computeIn()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Stocks</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control text-right py-1 float-right" style="width:70%;" id="st" onkeyup="computeIn()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Mutual Fund/  UITF</td>
+                          <td class="py-1"><input id="mf" type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" onkeyup="computeIn()"></td>
+                        </tr>
+                        <tr>                                       
+                          <td class="py-1">Others</td>
+                          <td class="py-1"><input id="otherIn" type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" onkeyup="computeIn()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg--secondary py-2" id="heading2">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#social" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Social Fund/Retirement Fund<span  class="float-right"><input id="totalSocialFund" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+              <div id="social" class="collapse">
+                <div class="card-body">
+                   <table class="table table-bordered table-success">
+                    <tbody>
+                        <tr>
+                          <td class="py-1">SSS Monthly Contribution</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="sss" onkeyup="computeSocial()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Philhealth Monthly Contribution</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="phil" onkeyup="computeSocial()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Pag-IBIG Fund Contribution</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="pagIbig" onkeyup="computeSocial()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Other Retirement Funds</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="otherRet" onkeyup="computeSocial()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg--default py-2" id="heading3">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#emergency" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Emergency Funds<span  class="float-right"><input id="totalEmer" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+
+              <div id="emergency" class="collapse">
+                <div class="card-body">
+                    <p class="text-muted"><strong>Mini Emergency Fund </strong>Allocate at least two weeks pay or Php 1,000 for minor unspected expenses like house or car repair, damage appliances or immediate health emergencies<br></p><hr>
+                    <p class="text-muted">
+                   <strong>Big Emergency Fund </strong>Aim for an emergency fund of three to six month's worth of expenses. Your emergency fund will help you cover financial problems in case of losing your job or any health emergencies in your family. 
+                   </p>
+                    <table class="table table-bordered table-warning">
+                    <tbody>
+                        <tr>
+                          <td class="py-1"> Mini Emergency Fund</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id='me' onkeyup="computeEmer()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1"> Big Emergency Fund</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id='be' onkeyup="computeEmer()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg-info py-2" id="heading3">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#week" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> 52-Week-Challenge<span class="float-right"><input id="totalWeek" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+              <div id="week" class="collapse">
+                <div class="card-body">
+                   <p class="text-muted">Enter the monthly total amount that you will allocate for the challenge. Example: Week 1: Php10.00, Week 2: Php20.00, Week 3: Php30.00, Week 4: Php40.00 for a total of Php 100.00</p>
+                    <table class="table table-bordered table-primary">
+                    <tbody>
+                        <tr>                                       
+                          <td class="py-1">Total Amount</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="wc" onkeyup="week()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg-secondary py-2" id="heading3">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#otherSave" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Others<span class="float-right"><input id="totalOtherSave" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+              <div id="otherSave" class="collapse">
+                <div class="card-body">
+                    <table class="table table-bordered table-primary">
+                    <tbody>
+                        <tr>                                       
+                          <td class="py-1">Tithe</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="tithe" onkeyup="otherSave()"></td>
+                        </tr>
+                        <tr>                                       
+                          <td class="py-1">Others</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="otherOthers" onkeyup="otherSave()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div> 
+
+          <table class="table table-success lead mt-3">
+          <tbody>
+            <tr>
+            <td style="width:10%;"><button id="ctS" class="btn btn-success btn-sm">Compute</button></td>
+              <td>Total Savings</td>
+              <td class="float-right mr-3" id="totalSavings">----</td> 
+              <td class="float-right mr-3 d-none"><input type="text" value="0" id="totalSavingshide"></td>    
+            </tr>
+          </tbody>
+        </table>
+         <table class="table table-warning lead mb-0">
+          <tbody>
+            <tr>
+             <td style="width:10%;"><button id="IncomeSaving" class="btn btn-success btn-sm">Compute</button></td>
+              <td>Income - Savings<span class="badge text-info" style="font-size:1em;">*</span></td>
+              <td class="float-right mr-3" id="inSaved">----</td>     
+            </tr>
+          </tbody>
+        </table>
+        <span class="text-muted"><span class="text-info">*</span><em> Remaining Balance after Savings are deducted</em></span>
+        <table class="table table-danger lead mb-0 mt-3">
+          <tbody>
+            <tr>
+              <td style="width:10%;"><button id="IncomeSavingEx" class="btn btn-success btn-sm">Compute</button></td>
+              <td>Income - Savings - Expenses<span class="badge text-info" style="font-size:1em;">*</span></td>
+              <td class="float-right mr-3" id="inSaveEx">----</td>     
+            </tr>
+          </tbody>
+        </table>
+        <span class="text-muted"><span class="text-info">*</span><em> Remaining Income after Savings and Expenses are deducted</em></span>
+        </div><!--End of Savings Accordion--> 
+        
+        <!-- Savings Donut-->
+        <div class="card mb-3 pt-2 mt-4">
+            <div id="savingsDonut" style="width: 500px; height: 300px;"></div>
+        </div>                                        
+        </div>
+
+        <!--Expenses-->
+        <div class="col-md-12 col-lg-6">    
+
+
+        <!-- Expense Accordion -->
+        <h4 class="text-center text-white mx-5 my-3 py-1 pb-2 border-radius bg--danger">Expenses</h4>
+         <p class="text-muted mb-1">Click down arrow <i class="fa fa-arrow-circle-down text-info"></i> to input individual lists of expenses</p>
+          <div id="accordion" role="tablist">
+            <div class="card">
+              <div class="card-body bg-info py-2" id="heading1">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#elect" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Bills and Household Needs<span  class="float-right"><input id="totalBill" value="0" type="text" class="form-control py-1 float-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+              <div id="elect" class="collapse">
+                <div class="card-body">
+                    <table class="table table-bordered table-info">
+                    <tbody>
+                        <tr>
+                          <td class="py-1">Electricity</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="elec" onkeyup="computeBill()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Gas</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control text-right py-1 float-right" style="width:70%;" id="gas" onkeyup="computeBill()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Water</td>
+                          <td class="py-1"><input id="water" type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" onkeyup="computeBill()"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">Transportation</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="tr" onkeyup="computeBill()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Telephone/Internet</td>
+                          <td class="py-1"><input id="telIn" type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" onkeyup="computeBill()"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">Groceries</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id='gr' onkeyup="computeBill()"></td>    
+                        </tr>
+                        <tr>                                      
+                          <td class="py-1">Others</td>
+                          <td class="py-1"><input id="otherBill" type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" onkeyup="computeBill()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body bg-secondary py-2" id="heading2">
+                  <h5 class="mb-0 text-white lead">
+                    <div href="#insurance" data-toggle="collapse" data-parent="#accordion">
+                      <i class="fa fa-arrow-circle-down"></i> Insurance Premiums<span  class="float-right"><input id="totalInsuPre" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                    </div>
+                  </h5>
+                </div>
+                <div id="insurance" class="collapse">
+                  <div class="card-body">
+                     <table class="table table-bordered table-success">
+                      <tbody>
+                          <tr>
+                            <td class="py-1">Life Insurance</td>
+                            <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="life" onkeyup="computeInsu()"></td>    
+                          </tr>
+                          <tr>                                
+                            <td class="py-1">Health Insurance</td>
+                            <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="healthInsu" onkeyup="computeInsu()"></td>
+                          </tr>
+                          <tr>                                
+                            <td class="py-1">Car/Property Insurance</td>
+                            <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="pro" onkeyup="computeInsu()"></td>
+                          </tr>
+                          <tr>                                       
+                            <td class="py-1">Others</td>
+                            <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="oinsu" onkeyup="computeInsu()"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                </div>
+              </div>
+
+
+            <div class="card">
+              <div class="card-body bg--primary py-2" id="heading2">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#loan" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Loan Monthly Amortization<span  class="float-right"><input id="totalLoan" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+              <div id="loan" class="collapse">
+                <div class="card-body">
+                   <table class="table table-bordered table-success">
+                    <tbody>
+                        <tr>
+                          <td class="py-1">Home Loan Amortization</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="hl" onkeyup="computeLoan()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">SSS Loan</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="sl" onkeyup="computeLoan()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Pag-ibig Loan</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="pl" onkeyup="computeLoan()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Bank Loan</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="bl" onkeyup="computeLoan()"></td>
+                        </tr>
+                        <tr>                                       
+                          <td class="py-1">Others</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="ol" onkeyup="computeLoan()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg--default py-2" id="heading2">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#health" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Health and Beauty<span  class="float-right"><input id="totalHealth" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+              <div id="health" class="collapse">
+                <div class="card-body">
+                   <table class="table table-bordered table-success">
+                    <tbody>
+                        <tr>
+                          <td class="py-1">Medicine/Food Supliments</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="med" onkeyup="computeHealth()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Doctor's/Dentist Visit</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="doc" onkeyup="computeHealth()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Derma/Therapy</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="der" onkeyup="computeHealth()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Make Up/Saloon/Span</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="makeUp" onkeyup="computeHealth()"></td>
+                        </tr>
+                        <tr> 
+                         <tr>                                
+                          <td class="py-1">Gym Membership</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="gym" onkeyup="computeHealth()"></td>
+                        </tr>
+                        <tr>                                     
+                          <td class="py-1">Others</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="oh" onkeyup="computeHealth()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg--secondary py-2" id="heading3">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#entertain" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Entertainment/Past Time<span  class="float-right"><input id="totalEnter" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+
+              <div id="entertain" class="collapse">
+                <div class="card-body">
+                    <table class="table table-bordered table-warning">
+                    <tbody>
+                       <tr>                                       
+                          <td class="py-1">Cable</td>
+                          <td class="py-1"><input id="cable" type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" onkeyup="computeEnter()"></td>
+                        </tr> 
+                        <tr>                                
+                          <td class="py-1">Snacks/Meals eaten out</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="sn" onkeyup="computeEnter()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Coffee/drinks with friends</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;"id="cd" onkeyup="computeEnter()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Shopping</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="sh" onkeyup="computeEnter()"></td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">Magazines/books</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="mb" onkeyup="computeEnter()"></td>    
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Lottery Tickets</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="lt" onkeyup="computeEnter()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Movies/Video Rentals</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="mv" onkeyup="computeEnter()"></td>
+                        </tr>
+                        <tr>                                
+                          <td class="py-1">Game App purchases</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="ga" onkeyup="computeEnter()"></td>
+                        </tr>
+                        <tr>                                       
+                          <td class="py-1">Others</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="oen" onkeyup="computeEnter()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg-info py-2" id="heading3">
+                <h5 class="mb-0 text-white lead">
+                  <div href="#otherex" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-arrow-circle-down"></i> Others<span class="float-right"><input id="totalOtherEx" value="0" type="text" class="form-control py-1 float-right text-right text-right text-white bg-transparent  border-white" style="width:70%;"></span>
+                  </div>
+                </h5>
+              </div>
+
+              <div id="otherex" class="collapse">
+                <div class="card-body">
+                    <table class="table table-bordered table-primary">
+                    <tbody>
+                        
+                        <tr>                                       
+                          <td class="py-1">Gift/Donations</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="gd" onkeyup="computeOtherEx()"></td>
+                        </tr>
+                        <tr>                                       
+                          <td class="py-1">Others</td>
+                          <td class="py-1"><input type="number" value="0" class="form-control py-1 float-right text-right" style="width: 70%;" id="oob" onkeyup="computeOtherEx()"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+        
+          <table class="table table-success lead mt-3">
+              <tbody>
+                <tr>
+                 <td style="width:10%;"><button id="ctE" class="btn btn-success btn-sm">Compute</button></td>
+                  <td>Total Expenses</td>
+                  <td class="float-right mr-3" id="totalExpenses"> ----</td>
+                  <td class="float-right mr-3 d-none"><input type="number" value="0" id="totalExpenseshide"></td>  
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-warning lead mb-0">
+              <tbody>
+                <tr>
+                 <td style="width:10%;"><button id="IncomeExpense" class="btn btn-success btn-sm">Compute</button></td>
+                  <td>Income - Expenses<span class="badge text-info" style="font-size:1em;">*</span></td>
+                  <td class="float-right mr-3" id="inEx"> ----</td>     
+                </tr>
+              </tbody>
+            </table>
+            <span class="text-muted"><span class="text-info">*</span><em> Remaining Income Balance after Expenses are deducted</em></span> 
+            <table class="table table-primary lead mb-0 mt-3">
+              <tbody>
+                <tr>
+                 <td style="width:10%;"><button id="IncomeExpenseSa" class="btn btn-success btn-sm">Compute</button></td>
+                  <td>Income - Expenses - Savings<span class="badge text-info" style="font-size:1em;">*</span></td>
+                  <td class="float-right mr-3" id="inExSa"> ----</td>     
+                </tr>
+              </tbody>
+            </table>
+            <span class="text-muted"><span class="text-info">*</span><em> Remaining Income Balance after Expenses and Savings are deducted</em></span>
+        </div><!--End of Expense Accordion-->
+                                      
+        <div class="card mb-3 pt-2 mt-4">
+            <div id="expensesDonut" style="width: 500px; height: 300px;"></div>
+        </div>
+                                       
+    </div>
+</div><!--End of Accordion Row-->
+    </div>
+</div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+<script src="google-charts.js"></script> 
+    <script src="moneyger.js"></script>
+
+</body>
+</html>
