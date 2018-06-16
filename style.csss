@@ -1,0 +1,415 @@
+
+.bg--primary {
+  background-color: #5A95F5 !important;
+}
+
+.bg--secondary {
+  background-color: #45526E !important;
+}
+
+.bg--default {
+  background-color: #30CFC0 !important;
+}
+
+.bg--success {
+  background-color: #00E25B !important;
+}
+
+.bg--warning {
+  background-color: #FF941A !important;
+}
+.bg--danger {
+  background-color:#A7313B !important;
+}
+
+/*
+==========================================
+BUTTONS
+==========================================
+*/
+
+.btn {
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 3px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+.btn--primary {
+  background-color: #5A95F5 !important;
+}
+
+.btn--primary:hover {
+  background-color: #2c75eb !important;
+}
+
+.btn--secondary {
+  background-color: #45526E !important;
+}
+
+.btn--secondary:hover {
+  background-color: #2f3748 !important;
+}
+
+.btn--default {
+  background-color: #30CFC0 !important;
+}
+
+.btn--default:hover {
+  background-color: #4bbeb3 !important;
+}
+
+.btn--success {
+  background-color: #00E25B !important;
+}
+
+.btn--success:hover {
+  background-color: #0ec156 !important;
+}
+
+.btn--info {
+  background-color: #4ABDE8 !important;
+}
+
+.btn--info:hover {
+  background-color: #39a7d0 !important;
+}
+
+.btn--warning {
+  background-color: #FF941A !important;
+}
+
+.btn--warning:hover {
+  background-color: #e28114 !important;
+}
+
+.btn--danger {
+  background-color: #FF4F5E !important;
+}
+
+.btn--danger:hover {
+  background-color: #d44551 !important;
+}
+
+.border-bottom-bold {
+  border-bottom: 2px solid #FF4F5E;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #5A95F5;
+}
+
+.border-radius {
+  border-radius: 20px;
+}
+
+/*
+==========================================
+MoneyGer Logo
+==========================================
+*/
+
+.money {
+  /* font-family: 'Audiowide', cursive; */
+  font-weight: 900;
+  /* font-style: italic; */
+  color: #fff;
+  /* border-bottom: 3px solid #FF4F5E; */
+ 
+}
+
+.mind {
+  font-weight: 800;
+  color: rgb(240, 53, 53);
+}
+
+/*
+==========================================
+Custom Typhography
+==========================================
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+}
+
+p {
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.disclaimer-text {
+  font-size: 11px;
+  font-weight: 100;
+  color: #868e96 !important;
+  line-height: 90%;
+}
+
+/*
+==========================================
+Showcase
+==========================================
+*/
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+#showcase {
+  position: relative;
+  background: url("/images/couple.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  position: relative;
+}
+
+.dark-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+}
+
+.navbar ul li a {
+  font-weight: 100;
+  font-size: 1.3rem;
+  color: #ffffff !important;
+}
+
+.navbar ul li:hover {
+  background: #FF4F5E !important;
+}
+
+@media (max-width: 992px) {
+  #showcase h1 {   
+    font-size:50px;
+  }
+  #showcase h3 {
+    font-size:25px;
+    font-weight: 300;
+  }
+}
+@media (max-width: 576px) {
+  #showcase h1 {
+    margin-top: 1.5em !important;
+   font-size: 40px;
+  }
+  #showcase h3 {
+    font-size:20px;
+    font-weight: 300;
+  }
+}
+/*
+==========================================
+Features
+==========================================
+*/
+
+#features h4 {
+  border: 1px solid #5A95F5;
+  border-radius: 30px;
+  padding: .3em 1em;
+}
+
+/*
+==========================================
+FINANCIAL TOOLS SECTION
+==========================================
+*/
+
+#financialTools {
+  border-bottom: 2px solid #ffff;
+}
+
+#calculators h2 {
+  font-weight: 100 !important;
+}
+
+#calculators h2:hover {
+  -webkit-transition: .5s;
+  transition: .5s;
+  color: #30CFC0;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  -webkit-transition: .8s;
+  transition: .8s;
+}
+
+.invest-cal,
+.week-cal,
+.retirement-cal {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.invest-cal img,
+.week-cal img,
+.retirement-cal img {
+  height: 300px;
+  width: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.invest-cal:hover img,
+.week-cal:hover img,
+.retirement-cal:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.invest-cal:hover,
+.week-cal:hover,
+.retirement-cal:hover {
+  -webkit-box-shadow: 3px 3px 25px 6px rgba(43, 50, 128, 0.5);
+          box-shadow: 3px 3px 25px 6px rgba(43, 50, 128, 0.5);
+}
+
+.overlay:hover {
+  background: rgba(62, 50, 166, 0.5);
+}
+
+#calculators .col-lg-4 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*
+==========================================
+BLOG SECTION
+==========================================
+*/
+
+@media (max-width: 575px) {
+  #blog {
+    margin: 0 .5em;
+  }
+
+  #blog h5 {
+    font-size: 1.5em;
+  }
+
+  #blog a {
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  #blog a {
+    margin-bottom: 1em;
+  }
+}
+
+/*
+==========================================
+Blog Index Page 
+==========================================
+*/
+
+.blog_header {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.blog_header img {
+  height: 150px;
+  width: 100%;
+}
+
+.blog_header_overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+}
+
+.related {
+  width: 15rem;
+}
+
+@media (max-width: 575px) {
+  .related {
+    display: none;
+  }
+}
+
+.blog_single_header {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.blog_single_header img {
+  height: 500px;
+  width: 100%;
+}
+
+.blog_single_header_overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 350px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+}
+
+/*
+==========================================
+SSS, TAX, VUL Calculator
+==========================================
+*/
+
+#calMenu {
+  border-bottom: 2px solid #FF941A;
+}
+
+#networthMenu ul li a:hover {
+  color: #fff !important;
+  background: #FF4F5E !important;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+.active {
+  background-color: #FF941A !important;
+}
