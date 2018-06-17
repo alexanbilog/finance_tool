@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <title>Finacial Tool | One Stop Site For Your Financial Tools</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg--danger">
+  <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand moneyGer py-0" href="index.html">
+            <h2 class="money">Finance<span class="mind">Tools</span>.com</span></h2>            
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav">
+              &nbsp;
+          </ul>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item mr-3">
+                  <div class="dropdown">
+                      <a class="nav-link dropdown-toggle" id="calc" data-toggle="dropdown">Calculators</a>
+                      <div class="dropdown-menu bg--secondary" aria-labelledby="calc">
+                          <a class="dropdown-item text-dark" href="sss_loan_calculator.html">SSS Loan Calculator</a>
+                          <a class="dropdown-item text-dark" href="sss_sickness_benefit_calculator.html">SSS Sickness Benefit Calculator</a>
+                          <a class="dropdown-item text-dark" href="sss_pension_calculator.html">SSS Pension Calculator</a>
+                          <a class="dropdown-item text-dark" href="taxcalculator.html">Income Tax Calculator</a>
+                          <a class="dropdown-item text-dark" href="investmentcalculator.html">Investment Calculator</a>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item mr-3">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" id="financetool" data-toggle="dropdown">Financial Tools</a>
+                    <div class="dropdown-menu bg--secondary" aria-labelledby="financetool">
+                        <a class="dropdown-item text-dark" href="networth.html">Net Worth Tracker</a>
+                        <a class="dropdown-item text-dark" href="income_expense_tracker.html">Income / Expense Tracker</a>
+                        <a class="dropdown-item text-dark" href="budget_tracker.html">Budget Tracker</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="sssCalculator" class="py-5">
+    <div class="container bg-white">
+        <div class="row">
+        <!--MAIN BODY-->
+        <div class="col-lg-9">
+            <div id="accordion">
+                <h2 class="pt-3"><strong>Calculators</strong></h2><hr>                
+                    <nav class="navbar navbar-expand-md navbar-light bg--danger p-0"> 
+                        <div class="navbar-header">
+                            <button class="navbar-toggler bg--secondary text-white mx-2 my-2 py-2" data-toggle="collapse" data-target="#financeNav"><i class="fa fa-arrow-down"></i> Choose Calculator</button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="financeNav">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a href="{{ url('sss_pension_calculator') }}" class="nav-link" style="border-right: 1px solid #fff;">SSS Pension Calculator</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="{{ url('sss_loan_calculator') }}" class="nav-link" style="border-right: 1px solid #fff;">SSS Loan Calculator</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('sss_sickness_benefit_calculator') }}" class="nav-link" style="border-right: 1px solid #fff;">Sickness Benefit Calculator</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                                                                                  
+                    <div class="row">
+                        <div class="px-4 mt-4">
+                            <h2>SSS Online Loan Calculator</h2>
+                            <p>Calculate how much money you can be able to loan from SSS</p>
+                        </div>                       
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card bg--secondary">
+                                <div class="m-4 text-white">
+                                    <p>Note: You are entitled to avail of a salary loan if you have paid at least 36 monthly contributions and have at least 6 posted monthly contributions within the last 12 months before filing a loan.</p>
+
+                                    <label class="lead">Monthly Paid Contribution</label>
+                                    <select class="form-control" id="monthlyPaidCon" type="number">
+                                        <option value="36">At least 36 Months</option>
+                                        <option value="72">At least 72 Months</option>
+                                    </select>
+                               
+                                    <label class="lead mt-3">Last 12 Months Average Monthly Salary Credit</label>
+                                    <input class="form-control" id="monthlySalCredit" type="number" name="amount" >   
+                                    
+                                </div>
+                                <div class="text-center">
+                                    <button class="col-sm-4 btn text-white btn--danger mb-3" onclick="computeSssLoan()">Calculate <i class="fa fa-calculator"></i></button>
+                                </div>
+                                
+                                <p class="mx-4 text-white">Check your Monthly Salary Credit <span class="btn btn--danger px-3 text-white"><a class="text-white" href="{{ url('sss_msc') }}">Here</a></span></p>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="mb-4">Total Loanable Amount</h5>
+                                    <h2 class="bg--danger px-3 py-3 text-white" id="totalLoanableAmount">&#x20b1;</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="px-3 mt-4 mx-3 bg-light">Disclaimer: This SSS Loan calculator is for illustrative purposes only and does not reflect the actual loan that you can get from SSS. This calculator only provides estimates of your loanable amount based from the information your provided and does not guarantee you will get the exact amount.</p>
+                    </div>                      
+              </div>
+          </div><!--End of Main Body-->
+
+          <!--Sidebar-->
+          <div class="col-lg-3">
+           <!--Ads-->
+            <div class="card-body bg--secondary text-white py-1">
+                <h4>Sponsors</h4>
+            </div>
+            <div class="card">       
+            </div>
+
+            <!--Calculator-->
+            <div class="card-body bg--danger py-1">
+                <h4>Other Calculators</h4>
+            </div>
+            <div class="list-group">
+                <a href="networth.html" class="list-group-item list-group-item-action">Investment Calculator</a>
+                 <a href="income-expense-tracker.html" class="list-group-item list-group-item-action">Income-Expense Calculator</a>
+                <a href="ssscalculator.html" class="list-group-item list-group-item-action">SSS Calculator</a>
+                <a href="taxcalculator.html" class="list-group-item list-group-item-action">Income Tax Calculator</a>
+            </div>
+            <br>
+          </div>
+        </div>
+    </div>
+</div>
+
+<footer id="main-footer" class="pt-1 pb-2 bg--secondary text-white">
+    <div class="col-md-6 mx-auto mb-3">
+            <nav class="navbar navbar-expand-sm navbar-light">
+                <div class="container">  
+                    <button class="navbar-toggler d-none" data-toggle="collapse" data-target="#footerNav"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="footerNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <p class="text-center">FinancialTools.com &copy; Copyright 2018</p>
+                </div>
+                <div class="col-sm-12 col-md-6 text-center">
+                    <nav class="navbar navbar-expand-sm navbar-light py-0">
+                        <div class="container">  
+                            <button class="navbar-toggler d-none" data-toggle="collapse" data-target="#footerSocial"><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="footerSocial">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a href="#" class="fa fa-facebook nav-link"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="fa fa-google-plus nav-link"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="fa fa-youtube nav-link"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="fa fa-instagram nav-link"></a>
+                                </li>
+                            </ul>
+                          </div>
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+<script src="google-charts.js"></script> 
+    <script src="moneyger.js"></script>
+
+</body>
+</html>
