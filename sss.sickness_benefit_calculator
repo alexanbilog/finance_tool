@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <title>Finacial Tool | One Stop Site For Your Financial Tools</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg--danger">
+  <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand moneyGer py-0" href="index.html">
+            <h2 class="money">Finance<span class="mind">Tools</span>.com</span></h2>            
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav">
+              &nbsp;
+          </ul>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item mr-3">
+                  <div class="dropdown">
+                      <a class="nav-link dropdown-toggle" id="calc" data-toggle="dropdown">Calculators</a>
+                      <div class="dropdown-menu bg--secondary" aria-labelledby="calc">
+                          <a class="dropdown-item text-dark" href="sss_loan_calculator.html">SSS Loan Calculator</a>
+                          <a class="dropdown-item text-dark" href="sss_sickness_benefit_calculator.html">SSS Sickness Benefit Calculator</a>
+                          <a class="dropdown-item text-dark" href="sss_pension_calculator.html">SSS Pension Calculator</a>
+                          <a class="dropdown-item text-dark" href="taxcalculator.html">Income Tax Calculator</a>
+                          <a class="dropdown-item text-dark" href="investmentcalculator.html">Investment Calculator</a>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item mr-3">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" id="financetool" data-toggle="dropdown">Financial Tools</a>
+                    <div class="dropdown-menu bg--secondary" aria-labelledby="financetool">
+                        <a class="dropdown-item text-dark" href="networth.html">Net Worth Tracker</a>
+                        <a class="dropdown-item text-dark" href="income_expense_tracker.html">Income / Expense Tracker</a>
+                        <a class="dropdown-item text-dark" href="budget_tracker.html">Budget Tracker</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="sssCalculator" class="py-5">
+    <div class="container bg-white">
+        <div class="row">
+
+            <!--MAIN BODY-->
+            <div class="col-lg-9">       
+                <h2 class="pt-3"><strong>Calculators</strong></h2><hr>  
+                    <nav class="navbar navbar-expand-md navbar-light bg--danger p-0"> 
+                        <div class="navbar-header">
+                            <button class="navbar-toggler bg--secondary text-white mx-2 my-2 py-2" data-toggle="collapse" data-target="#financeNav"><i class="fa fa-arrow-down"></i> Choose Calculator</button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="financeNav">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a href="{{ url('sss_pension_calculator') }}" class="nav-link" style="border-right: 1px solid #fff;">SSS Pension Calculator</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('sss_loan_calculator') }}" class="nav-link" style="border-right: 1px solid #fff;">SSS Loan Calculator</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="{{ url('sss_sickness_benefit_calculator') }}" class="nav-link" style="border-right: 1px solid #fff;">Sickness Benefit Calculator</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                                
+                    <div class="row">
+                        <div class="px-4 mt-4">
+                            <h2>SSS Sickness Calculator</h2>
+                            <p>Calculate how much sickness benefit you can avail from SSS</p>
+                        </div>                                  
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card bg--primary">
+                                <div class="m-4 text-white">
+                                    <label class="lead">Number of Days You are Sick</label>
+                                    <input class="form-control" id="numberOfDays" type="number">  
+                                    <label class="lead mt-3">Six Highest Monthly Salary Credit</label>
+                                    <p><a href="" class="text-white" data-toggle="modal" data-target="#sixMonthly">What is Six Highest Monthly Salary Credit?</a></p>
+                                    <input class="form-control" id="monthlySalaryCredit" type="number">   
+                                    
+                                </div>
+                                <div class="text-center">
+                                    <button class="col-sm-4 btn text-white btn--danger mb-3" onclick="computeSicknessBenefit()">Calculate <i class="fa fa-calculator"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="mb-4">Total Sickness Benefit</h5>
+                                    <h3 class="bg--danger px-3 py-3 text-white" id="totalSickness">&#x20b1;</h3>
+                                </div>
+                            </div>
+                        </div>     
+                        
+                        <br>
+                        <div class="container py-4"> 
+                            <h3>How SSS Benefit is Calculated</h3>
+                            <img class="img-fluid" src="images/sickness.png" alt="infographic">
+                        </div>
+                    </div>
+                        <p class="px-3 mt-4 mx-3 bg-light">Disclaimer: This SSS Sickness benefit calculator is for illustrative purposes only and does not reflect the actual sickness benefit that you can get from SSS. This calculator only provides estimates of your sickness benefit due based from the information your provided and does not guarantee you will get the same amount.</p>
+                    
+                    
+                    <!--Six Monthly Credit Modal-->
+                    <div class="modal fade" id="sixMonthly" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header bg--primary text-white">
+                                <h5 class="modal-title">What is Six Highest Monthly Salary Credit?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                It is the six highest monthly salary credits taken within the 12-month period starting before the semester of sickness. 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>    
+            </div><!--End of Main Body-->
+          <!--SIDEBAR-->
+          <div class="col-lg-3">
+           
+             <!--Ads-->
+              <div class="card-body bg--secondary text-white py-1">
+                  <h4>Sponsors</h4>
+              </div>
+              <div class="card">       
+              </div>
+
+              <!--Calculator-->
+              <div class="card-body bg--danger py-1">
+                  <h4>Other Calculators</h4>
+              </div>
+              <div class="list-group">
+                  <a href="networth.html" class="list-group-item list-group-item-action">Investment Calculator</a>
+                   <a href="income-expense-tracker.html" class="list-group-item list-group-item-action">Income-Expense Calculator</a>
+                  <a href="ssscalculator.html" class="list-group-item list-group-item-action">SSS Calculator</a>
+                  <a href="taxcalculator.html" class="list-group-item list-group-item-action">Income Tax Calculator</a>
+              </div>
+              <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+<script src="google-charts.js"></script> 
+    <script src="moneyger.js"></script>
+
+</body>
+</html>
