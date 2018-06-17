@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <title>Finacial Tool | Online Income Tax Calculator</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg--danger">
+  <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand moneyGer py-0" href="index.html">
+            <h2 class="money">Finance<span class="mind">Tools</span>.com</span></h2>            
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav">
+              &nbsp;
+          </ul>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item mr-3">
+                  <div class="dropdown">
+                      <a class="nav-link dropdown-toggle" id="calc" data-toggle="dropdown">Calculators</a>
+                      <div class="dropdown-menu bg--secondary" aria-labelledby="calc">
+                          <a class="dropdown-item text-dark" href="sss_loan_calculator.html">SSS Loan Calculator</a>
+                          <a class="dropdown-item text-dark" href="sss_sickness_benefit_calculator.html">SSS Sickness Benefit Calculator</a>
+                          <a class="dropdown-item text-dark" href="sss_pension_calculator.html">SSS Pension Calculator</a>
+                          <a class="dropdown-item text-dark" href="taxcalculator.html">Income Tax Calculator</a>
+                          <a class="dropdown-item text-dark" href="investmentcalculator.html">Investment Calculator</a>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item mr-3">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" id="financetool" data-toggle="dropdown">Financial Tools</a>
+                    <div class="dropdown-menu bg--secondary" aria-labelledby="financetool">
+                        <a class="dropdown-item text-dark" href="networth.html">Net Worth Tracker</a>
+                        <a class="dropdown-item text-dark" href="income_expense_tracker.html">Income / Expense Tracker</a>                       
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="sssCalculator" class="py-5">
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-lg-9">
+                <h2 class="mt-3">2018 Online Income Tax Calculator</h2>
+                <p>Calculate how much income tax you'll pay under the new tax rate for 2018.</p><hr>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="card bg-light">
+                            <div class="m-4">
+                                <label class="lead mb-0">What is Your Net Monthly Income</label>
+                                <p style="line-height:120%;">(SSS, Philhealth and Pag-Ibig are deducted.) </p>
+                                <input class="form-control" id="monthlyIncome" type="number" name="amount" placeholder="Your Net Monthly Income">  
+                                <small>Input number without coma</small> 
+                            </div>
+                            <div class="text-center">
+                                <button class="col-sm-4 btn text-white btn--danger mb-3" onclick="computeTax()">Calculate <i class="fa fa-calculator"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                    <h5>Net Annual Taxable Income</h5>
+                                    <h1 class="bg-light px-3 py-1 border border-danger" id="taxableIncome">&#x20b1;</h1>
+                                    <h5 class="mt-3">Income Tax to Pay</h5>
+                                    <h1 class="bg-light px-3 py-1 border border-danger" id="taxDue">&#x20b1;</h1>
+                                    
+                                </div>
+                        </div>
+                    </div>
+                    <div class="card m-3 p-3">
+                        <h3 class="text-info">Facts about Philippines New Income Tax Rates 2018</h3>
+                        <p>The proposed new tax reform that had been approved by President Rodrigo Duterte aims to exempt and lower the tax liabilities of most Filipino income earners or self-employed to help them increase their take-home pay.</p>
+                        <h3 class="text-info">New Income Tax Rate 2018 to 2022</h3>
+                        <table class="table table-striped">
+                                <thead class="bg--danger text-white">
+                                    <tr>                                                  
+                                    <th scope="col">Annual Income</th>
+                                    <th scope="col">Tax Rate (2018 - 2022)</th>
+                                    <th scope="col">Tax Rate (2022 onwards)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>                                                  
+                                    <td>Not over P250,000</td>
+                                    <td>0 %</td>
+                                    <td>0 %</td>
+                                    </tr>
+                                    <tr>
+                                    <td>P250,000 to P400,000</td>
+                                    <td>20% of the excess over P250,000</td>
+                                    <td>15% of the excess over P250,000</td>
+                                    </tr>
+                                    <tr>
+                                    <td>P400,000 to P800,000</td>
+                                    <td>P30,000 + 25% of the excess over P400,000</td>
+                                    <td>P30,000 + 20% of the excess over P400,000</td>
+                                    </tr>
+                                    <tr>
+                                    <td>P800,000 to P2 Million</td>
+                                    <td>P130,000 + 30% of the excess over P800,000</td>
+                                    <td>P102,500 + 25% of the excess over P800,000</td>
+                                </tr>
+                                <tr>
+                                <td>P2 Million to P8 Million</td>
+                                <td>P490,000 + 32% of the excess over P2 Million</td>
+                                <td>P402,500 + 30% of the excess over P2 Million</td>
+                                </tr>
+                                <td>Over P8 Million</td>
+                                    <td>P2.41 Million + 35% of the excess over P8 Million</td>
+                                    <td>P2,202,500 + 35% of the excess over P8 Million</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                    </div>
+
+                    <p class="px-3 mt-4 mx-3 bg-light">Disclaimer: This income tax calculator is for illustrative purposes only and does not reflect the actual income tax you have to pay. This income tax calculator only provides estimates of your tax obligation under the new tax reform starting 2018.</p>
+                </div>
+                
+            </div>
+
+        <!--SIDEBAR-->
+         <div class="col-lg-3">           
+             <!--Ads-->
+              <div class="card-body bg--secondary text-white py-1">
+                  <h4>Sponsors</h4>
+              </div>
+              <div class="card">       
+              </div>
+
+              <!--Calculator-->
+              <div class="card-body bg--danger py-1">
+                  <h4>Other Calculators</h4>
+              </div>
+              <div class="list-group">
+                  <a href="networth.html" class="list-group-item list-group-item-action">Investment Calculator</a>
+                   <a href="income-expense-tracker.html" class="list-group-item list-group-item-action">Income-Expense Calculator</a>
+                  <a href="ssscalculator.html" class="list-group-item list-group-item-action">SSS Calculator</a>
+                  <a href="taxcalculator.html" class="list-group-item list-group-item-action">Income Tax Calculator</a>
+              </div>
+              <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+    <script src="moneyger.js"></script>
+</body>
+</html>
